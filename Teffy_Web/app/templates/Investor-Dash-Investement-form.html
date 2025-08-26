@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invest with Cardano - Teffy Africa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Investor-Invest-form_script.css') }}">    
+</head>
+
+<body>
+    <div class="container">
+        <header class="investment-header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Cardano.svg" alt="Cardano Logo"
+                class="cardano-logo">
+            <h1 class="page-title">Invest in Farm</h1>
+            <p class="subtitle">Secure investment powered by Cardano (ADA)</p>
+        </header>
+        <form class="investment-form" id="investmentForm">
+            <section class="form-section">
+                <h2 class="section-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    Investor Information
+                </h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-input" id="investorName" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" id="investorEmail" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone Number <span class="optional">(optional)</span></label>
+                        <input type="tel" class="form-input" id="investorPhone">
+                    </div>
+                </div>
+            </section>
+            <section class="form-section">
+                <h2 class="section-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H7"></path>
+                    </svg>
+                    Investment Details
+                </h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Investment Amount (USD)</label>
+                        <div class="amount-input">
+                            <span class="currency-symbol">$</span>
+                            <input type="number" class="form-input" id="investmentAmount" min="100" step="100" required>
+                        </div>
+                        <div class="ada-conversion">≈ <span id="adaAmount">0</span> ADA</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Investment Duration</label>
+                        <select class="form-input" id="duration" required>
+                            <option value="3">3 months</option>
+                            <option value="6">6 months</option>
+                            <option value="12">12 months</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Message to Farmer <span class="optional">(optional)</span></label>
+                        <textarea class="form-input" id="message" rows="3"></textarea>
+                    </div>
+                </div>
+            </section>
+            <section class="payment-section">
+                <h3 class="payment-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                        <line x1="1" y1="10" x2="23" y2="10"></line>
+                    </svg>
+                    Cardano Payment Details
+                </h3>
+                <div class="wallet-address" id="walletAddress">
+                    addr1qxck2k6gq...3nsj6l35n0ck
+                </div>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=addr1qxck2k6gq...3nsj6l35n0ck"
+                    alt="Cardano Wallet QR Code" class="qr-code">
+            </section>
+            <button type="submit" class="submit-button">Complete Investment</button>
+            <div class="success-message" id="successMessage">
+                Investment submitted successfully! Transaction processing...
+            </div>
+        </form>
+    </div>
+    <script type="module" src="{{ url_for('static', filename='js/Investor-Investement-form_style.js') }}"></script>
+</body>
+</html>

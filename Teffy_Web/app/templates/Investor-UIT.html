@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Details - Teffy Africa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Investor-Dash-Connectivity.css') }}">
+</head>
+
+<body>
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+    <div class="container">
+        <div class="image-gallery">
+            <div class="gallery-scroll" id="galleryScroll">
+            </div>
+            <div class="gallery-nav" id="galleryNav">
+            </div>
+        </div>
+        <div class="farm-header">
+            <h1 class="farm-name" id="farmName">Loading...</h1>
+            <div class="farm-location" id="farmLocation">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                Loading...
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalArea">-</div>
+                    <div class="stat-label">Total Area (acres)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="fundAmount">-</div>
+                    <div class="stat-label">Investment Needed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="returnRate">-</div>
+                    <div class="stat-label">Return Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="paybackPeriod">-</div>
+                    <div class="stat-label">Payback Period</div>
+                </div>
+            </div>
+        </div>
+        <div class="details-grid">
+            <div class="details-card">
+                <h2 class="card-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    </svg>
+                    Farm Information
+                </h2>
+                <div class="detail-item">
+                    <div class="detail-label">Farm Type</div>
+                    <div class="detail-value" id="farmType">-</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Farming Practice</div>
+                    <div class="detail-value" id="farmingPractice">-</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Soil Type</div>
+                    <div class="detail-value" id="soilType">-</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Water Source</div>
+                    <div class="detail-value" id="waterSource">-</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Certifications</div>
+                    <div class="detail-value" id="certifications">-</div>
+                </div>
+            </div>
+            <div class="details-card">
+                <h2 class="card-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H7"></path>
+                    </svg>
+                    Financial Details
+                </h2>
+                <div class="detail-item">
+                    <div class="detail-label">Current Revenue</div>
+                    <div class="detail-value" id="currentRevenue">-</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Funding Purpose</div>
+                    <div class="detail-value" id="fundingPurpose">-</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Collateral</div>
+                    <div class="detail-value" id="collateral">-</div>
+                </div>
+            </div>
+            <div class="details-card">
+                <h2 class="card-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    Owner Information
+                </h2>
+                <div class="detail-item">
+                    <div class="detail-label">Owner Name</div>
+                    <div class="detail-value" id="ownerName">-</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Contact Email</div>
+                    <div class="detail-value" id="contactEmail">-</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Contact Phone</div>
+                    <div class="detail-value" id="contactPhone">-</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Region</div>
+                    <div class="detail-value" id="region">-</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="invest-button" id="investButton">Start Investing</button>
+    <script src="{{ url_for('static', filename='js/Investor-Dash-UIT-style.js') }}"></script>
+</body>
+
+</html>

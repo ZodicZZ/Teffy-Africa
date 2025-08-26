@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - Teffy Africa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Farmer-Dash_Notfication.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Notifications</h1>
+            <p class="subtitle">Stay updated with your investment offers</p>
+        </header>
+        <div class="notifications-container" id="notificationsContainer">
+            <div class="loading">Loading notifications...</div>
+        </div>
+    </div>
+    <script type="module" src="{{ url_for('static', filename='js/Farmer_Dash-Notifcation_script.js') }}"></script>
+</body>
+
+</html>

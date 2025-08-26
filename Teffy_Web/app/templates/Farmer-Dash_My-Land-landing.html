@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Lands - Teffy Africa</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/Farmer-Dash-My-Lands-Landing.css') }}">  
+</head>
+<body>
+  <div id="particles-js"></div>
+  <main class="main-content">
+    <div class="lands-container">
+      <div class="land-card">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef" alt="Farm Land" class="land-image" />
+        <div class="land-content">
+          <h3 class="land-title">Fertile Valley Farm</h3>
+          <div class="land-details">
+            <div class="detail-item">
+              <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Nairobi, Kenya</span>
+            </div>
+            <div class="detail-item">
+              <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z">
+                </path>
+              </svg>
+              <span>5 Acres</span>
+            </div>
+            <div class="detail-item">
+              <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707">
+                </path>
+              </svg>
+              <span>Fertile Soil</span>
+            </div>
+            <div class="detail-item">
+              <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707">
+                </path>
+              </svg>
+              <span>Water Source</span>
+            </div>
+          </div>
+          <span class="land-status status-verified">Verified</span>
+          <p class="land-description">
+            Prime agricultural land with rich soil and year-round water
+            supply. Perfect for crop farming and agricultural investments.
+          </p>
+          <div class="land-footer">
+            <span class="land-price">$50,000</span>
+            <button class="view-details">View Details</button>
+          </div>
+        </div>
+      </div>
+      <div class="empty-state" style="display: none">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 3h18v18H3zM12 8v8M8 12h8"></path>
+        </svg>
+        <h2>No Lands Registered Yet</h2>
+        <p>
+          Start by registering your first piece of land to manage it through
+          our platform.
+        </p>
+        <a href="/register_farm_land" class="register-land-btn">Register Land</a>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="{{ url_for('static', filename='js/Farmer_Dash-My-Land-Landing.js') }}"></script>
+</body>
+
+</html>

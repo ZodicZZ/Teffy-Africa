@@ -1,0 +1,11 @@
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="{{ url_for('static', filename='js/Farmer-Dash_script.js') }}"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/Farmer-Dash_style.css') }}">    
+Farmer_Dash-My-Land-Landing
+<script src="{{ url_for('static', filename='js/Investor-Dash-UIT-style.js') }}"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/Investor-Dash-Connectivity.css') }}">
+Teffy_Sign-Up_script
+Farmer_Dash_Validation_script
+<script src="{{ url_for('static', filename='js/Farmer_Dash_Validation_script.js') }}"></script>
+Farmer-Dash-Validation
+<link rel="stylesheet" href="{{ url_for('static', filename='css/Farmer-Dash-Validation.css') }}">

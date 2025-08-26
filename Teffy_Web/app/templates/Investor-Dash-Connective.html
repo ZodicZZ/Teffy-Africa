@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Farms - Teffy Africa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Investor-Dash-Connectivity.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <header class="search-header">
+            <h1 class="search-title">Available Farms</h1>
+            <div class="search-bar">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search farms...">
+                <svg class="search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+        </header>
+        <main class="farms-grid" id="farmsGrid">
+            <div class="loading">Loading farms...</div>
+        </main>
+    </div>
+    <script type="module" src="{{ url_for('static', filename='js/Investor-Connectivity_script.js') }}"></script>
+</body>
+
+</html>

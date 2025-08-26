@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farm Registration - Teffy Africa</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/Farmer-Dash_RegisterLand_style.css') }}">
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  <div class="container">
+    <div class="progress-bar">
+      <div class="progress-steps">
+        <div class="step active">
+          <div class="step-number">1</div>
+          <div class="step-label">Basic Info</div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-label">Location</div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-label">Farm Details</div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-label">Documents</div>
+        </div>
+        <div class="step">
+          <div class="step-number">5</div>
+          <div class="step-label">Financials</div>
+        </div>
+      </div>
+    </div>
+    <form id="farmRegistrationForm" method="POST" action="/register_farm" enctype="multipart/form-data">
+      <div class="form-card" id="section1">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Basic Information</h2>
+            <p class="section-subtitle">
+              Enter the basic details about your farm
+            </p>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="farmName">Farm Name</label>
+            <input type="text" id="farmName" name="farmName" class="form-input" required
+              placeholder="Enter farm name" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="ownerName">Owner Name</label>
+            <input type="text" id="ownerName" name="ownerName" class="form-input" required
+              placeholder="Enter owner's name" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contactPhone">Contact Phone</label>
+            <input type="tel" id="contactPhone" name="contactPhone" class="form-input" required
+              placeholder="Enter contact number" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contactEmail">Contact Email</label>
+            <input type="email" id="contactEmail" name="contactEmail" class="form-input" required
+              placeholder="Enter contact email" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="nationality">Nationality</label>
+            <input type="text" id="nationality" name="nationality" class="form-input" required
+              placeholder="Enter nationality" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="region">Region</label>
+            <input type="text" id="region" name="region" class="form-input" required placeholder="Enter region" />
+          </div>
+        </div>
+      </div>
+      <div class="form-card" id="section2">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Location Details</h2>
+            <p class="section-subtitle">
+              Provide the exact location of your farm
+            </p>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="farmAddress">Farm Address</label>
+            <input type="text" id="farmAddress" name="farmAddress" class="form-input" required
+              placeholder="Enter complete farm address" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="latitude">Latitude</label>
+            <input type="text" id="latitude" name="latitude" class="form-input" required
+              placeholder="Enter latitude coordinates" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="longitude">Longitude</label>
+            <input type="text" id="longitude" name="longitude" class="form-input" required
+              placeholder="Enter longitude coordinates" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="elevation">Elevation (meters)</label>
+            <input type="number" id="elevation" name="elevation" class="form-input" required
+              placeholder="Enter elevation" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="totalArea">Total Area (hectares)</label>
+            <input type="number" id="totalArea" name="totalArea" class="form-input" required
+              placeholder="Enter total area" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="accessRoads">Access Roads</label>
+            <input type="text" id="accessRoads" name="accessRoads" class="form-input" required
+              placeholder="Describe access roads" />
+          </div>
+        </div>
+      </div>
+      <div class="form-card" id="section3">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Farm Details</h2>
+            <p class="section-subtitle">
+              Tell us more about your farming operations
+            </p>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="farmType">Farm Type</label>
+            <select id="farmType" name="farmType" class="form-input" required>
+              <option value="">Select farm type</option>
+              <option value="crop">Crop Farming</option>
+              <option value="livestock">Livestock Farming</option>
+              <option value="mixed">Mixed Farming</option>
+              <option value="poultry">Poultry Farming</option>
+              <option value="aquaculture">Aquaculture</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="mainCrops">Main Crops/Livestock</label>
+            <input type="text" id="mainCrops" name="mainCrops" class="form-input" required
+              placeholder="Enter main crops or livestock" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="farmingPractice">Farming Practice</label>
+            <select id="farmingPractice" name="farmingPractice" class="form-input" required>
+              <option value="">Select farming practice</option>
+              <option value="conventional">Conventional</option>
+              <option value="organic">Organic</option>
+              <option value="sustainable">Sustainable</option>
+              <option value="integrated">Integrated</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="waterSource">Water Source</label>
+            <select id="waterSource" name="waterSource" class="form-input" required>
+              <option value="">Select water source</option>
+              <option value="river">River</option>
+              <option value="well">Well</option>
+              <option value="rainwater">Rainwater</option>
+              <option value="municipal">Municipal Supply</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="soilType">Soil Type</label>
+            <select id="soilType" name="soilType" class="form-input" required>
+              <option value="">Select soil type</option>
+              <option value="sandy">Sandy</option>
+              <option value="clay">Clay</option>
+              <option value="loamy">Loamy</option>
+              <option value="silt">Silt</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="infrastructure">Available Infrastructure</label>
+            <input type="text" id="infrastructure" name="infrastructure" class="form-input" required
+              placeholder="List available infrastructure" />
+          </div>
+        </div>
+      </div>
+      <div class="form-card" id="section4">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Documents & Certifications</h2>
+            <p class="section-subtitle">
+              Upload required documents and certifications
+            </p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Land Title Certificate</label>
+          <div class="file-upload">
+            <svg class="file-upload-icon" viewBox="0 0 24 24">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" fill="none" stroke="currentColor" stroke-width="2" />
+              <polyline points="17 8 12 3 7 8" fill="none" stroke="currentColor" stroke-width="2" />
+              <line x1="12" y1="3" x2="12" y2="15" stroke="currentColor" stroke-width="2" />
+            </svg>
+            <p class="file-upload-text">
+              Click to upload or drag and drop<br />PDF or image file
+            </p>
+            <input type="file" name="landTitle" accept=".pdf,image/*" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Farm Images</label>
+          <div class="file-upload">
+            <svg class="file-upload-icon" viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" fill="none" stroke="currentColor"
+                stroke-width="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" fill="none" stroke="currentColor" stroke-width="2" />
+              <polyline points="21 15 16 10 5 21" fill="none" stroke="currentColor" stroke-width="2" />
+            </svg>
+            <p class="file-upload-text">
+              Upload multiple images of your farm<br />Maximum 5 images
+            </p>
+            <input type="file" name="farmImages" accept="image/*" multiple required />
+          </div>
+          <div class="image-preview" id="imagePreview"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Additional Certifications</label>
+          <div class="file-upload">
+            <svg class="file-upload-icon" viewBox="0 0 24 24">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" fill="none" stroke="currentColor" stroke-width="2" />
+              <polyline points="17 8 12 3 7 8" fill="none" stroke="currentColor" stroke-width="2" />
+              <line x1="12" y1="3" x2="12" y2="15" stroke="currentColor" stroke-width="2" />
+            </svg>
+            <p class="file-upload-text">
+              Upload any additional certifications<br />PDF or image files
+            </p>
+            <input type="file" name="certifications" accept=".pdf,image/*" multiple />
+          </div>
+        </div>
+      </div>
+      <div class="form-card" id="section5">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Financial Information</h2>
+            <p class="section-subtitle">
+              Provide details about funding requirements
+            </p>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="fundAmount">Required Funding Amount</label>
+            <div class="currency-input-group">
+              <span class="currency-symbol">$</span>
+              <input type="text" id="fundAmount" name="fundAmount" class="form-input currency-input" required
+                placeholder="Enter amount" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="fundingPurpose">Purpose of Funding</label>
+            <select id="fundingPurpose" name="fundingPurpose" class="form-input" required>
+              <option value="">Select purpose</option>
+              <option value="expansion">Farm Expansion</option>
+              <option value="equipment">Equipment Purchase</option>
+              <option value="infrastructure">
+                Infrastructure Development
+              </option>
+              <option value="working_capital">Working Capital</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="returnRate">Expected Return Rate (%)</label>
+            <input type="number" id="returnRate" name="returnRate" class="form-input" required
+              placeholder="Enter expected ROI" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="paybackPeriod">Payback Period (months)</label>
+            <input type="number" id="paybackPeriod" name="paybackPeriod" class="form-input" required
+              placeholder="Enter payback period" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="collateral">Available Collateral</label>
+            <input type="text" id="collateral" name="collateral" class="form-input" required
+              placeholder="Describe available collateral" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="currentRevenue">Current Annual Revenue</label>
+            <div class="currency-input-group">
+              <span class="currency-symbol">$</span>
+              <input type="text" id="currentRevenue" name="currentRevenue" class="form-input currency-input" required
+                placeholder="Enter current revenue" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-footer">
+        <button type="button" class="btn btn-secondary" id="prevBtn">
+          Previous
+        </button>
+        <button type="button" class="btn btn-primary" id="nextBtn">
+          Next
+        </button>
+        <button type="submit" class="btn btn-primary" id="submitBtn" style="display: none">
+          Submit Registration
+        </button>
+      </div>
+    </form>
+  </div>
+</body>
+<script type="module" src="{{ url_for('static', filename='js/Farmer_Dash-RegisterLand_script.js') }}"></script>
+</html>

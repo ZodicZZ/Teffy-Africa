@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Teffy-Africa</title>   
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Teffy_Sign_Up.css') }}">  
+</head>
+
+<body>
+    <div class="background-pattern"></div>
+    <main class="container">    
+        <section class="glass-card">
+            <h1 class="title">Sign Up</h1>
+            <form class="signup-form" id="signupForm">
+                <div class="form-group">
+                    <label for="name" class="form-label">
+                        Name
+                        <span class="validation-status" id="nameStatus">✓ Valid name</span>
+                    </label>
+                    <input type="text" id="name" class="form-input" placeholder="Enter your full name" required />
+                    <span class="error-message" id="nameError">Please enter your full name</span>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">
+                        Email
+                        <span class="validation-status" id="emailStatus">✓ Valid email</span>
+                    </label>
+                    <input type="email" id="email" class="form-input" placeholder="Enter your email" required />
+                    <span class="error-message" id="emailError">Please enter a valid email</span>
+                </div>
+                <div class="form-group">
+                    <label for="username" class="form-label">
+                        Username
+                        <span class="validation-status" id="usernameStatus">✓ Valid username</span>
+                    </label>
+                    <input type="text" id="username" class="form-input" placeholder="Choose a username" required />
+                    <span class="error-message" id="usernameError">Username must be at least 3 characters</span>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="form-label">
+                        Phone Number
+                        <span class="validation-status" id="phoneStatus">✓ Valid number</span>
+                    </label>
+                    <input type="tel" id="phone" class="form-input" placeholder="Enter your phone number" required />
+                    <span class="error-message" id="phoneError">Please enter a valid phone number</span>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">
+                        Password
+                        <span class="validation-status" id="passwordStatus">✓ Strong password</span>
+                    </label>
+                    <div class="password-container">
+                        <input type="password" id="password" class="form-input" placeholder="Create a password"
+                            required />
+                        <button type="button" class="password-toggle" onclick="togglePassword('password')">
+                            <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </div>
+                    <span class="error-message" id="passwordError">Password must be at least 8 characters with numbers
+                        and letters</span>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword" class="form-label">
+                        Confirm Password
+                        <span class="validation-status" id="confirmPasswordStatus">✓ Passwords match</span>
+                    </label>
+                    <div class="password-container">
+                        <input type="password" id="confirmPassword" class="form-input"
+                            placeholder="Confirm your password" required />
+                        <button type="button" class="password-toggle" onclick="togglePassword('confirmPassword')">
+                            <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </div>
+                    <span class="error-message" id="confirmPasswordError">Passwords do not match</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">
+                        Register as
+                        <span class="validation-status" id="userTypeStatus">✓ Type selected</span>
+                    </label>
+                    <div class="user-type-group">
+                        <div class="user-type-option">
+                            <input type="radio" id="farmer" name="userType" value="farmer" class="user-type-input"
+                                required />
+                            <label for="farmer" class="user-type-label">Farmer</label>
+                        </div>
+                        <div class="user-type-option">
+                            <input type="radio" id="investor" name="userType" value="investor"
+                                class="user-type-input" />
+                            <label for="investor" class="user-type-label">Investor</label>
+                        </div>
+                    </div>
+                    <span class="error-message" id="userTypeError">Please select a user type</span>
+                </div>
+                <button type="submit" class="signup-button">Create Account</button>
+            </form>
+            <div class="form-footer">
+                <p>Already have an account? <a href="{{ url_for('login') }}">Sign in</a></p>
+            </div>
+        </section>
+        <script src="{{ url_for('static', filename='js/Teffy-login_script.js') }}"></script>
+    </main>
+</html>

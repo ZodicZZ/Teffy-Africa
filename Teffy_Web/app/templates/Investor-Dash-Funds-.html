@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funds - Teffy Africa</title>
+    <link rel="stylesheet" href="css/Investor-Dash-funds_style.css" />                                              
+</head>
+
+<body>
+    <main class="funds-container">
+        <header class="funds-header">
+            <h1 class="funds-title">Investment Dashboard</h1>
+            <p class="funds-subtitle">Track your agricultural investments and returns in real-time</p>
+        </header>
+        <div class="funds-content">
+            <div class="fund-stats" id="fundStats">
+                <div class="stat-box">
+                    <div class="stat-label">Total Investment</div>
+                    <div class="stat-value" id="totalInvestment">$0</div>
+                    <div class="stat-change">+2.5% from last month</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Expected Return</div>
+                    <div class="stat-value" id="expectedReturn">$0</div>
+                    <div class="stat-change">+5.8% projected growth</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Current Balance</div>
+                    <div class="stat-value" id="currentBalance">$0</div>
+                    <div class="stat-change">Updated just now</div>
+                </div>
+            </div>
+            <div class="no-funds" id="noFunds" style="display: none;">
+                <div class="loading-indicator"></div>
+                <h2 class="no-funds-title">Getting Started with Investments</h2>
+                <p class="no-funds-text">
+                    Track your agricultural investments and monitor their performance in real-time.
+                    Add your first investment to begin.
+                </p>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="{{ url_for('static', filename='js/Investor-Dash-funds-script.js') }}"></script>
+</body>
+
+</html>

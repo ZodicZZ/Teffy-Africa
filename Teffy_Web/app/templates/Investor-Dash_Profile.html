@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile - Glassmorphic UI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/Investor-Profile-style.css') }}">    
+</head>
+
+<body>
+  <div class="profile-container">
+    <div class="profile-header">
+      <div class="profile-avatar profile-picture-upload" id="profileAvatar">JD</div>
+      <input type="file" id="profilePictureInput" accept="image/*" style="display: none;" />
+      <h1 class="profile-title" id="profileName">John Doe</h1>
+      <p class="profile-subtitle" id="profileUsername">@johndoe</p>
+    </div>
+    <div class="profile-content" id="profileView">
+      <div class="profile-field">
+        <div class="field-label">Email</div>
+        <div class="field-value" id="profileEmail">john.doe@example.com</div>
+      </div>
+      <div class="profile-field">
+        <div class="field-label">Phone</div>
+        <div class="field-value" id="profilePhone">+1 234 567 8900</div>
+      </div>
+      <div class="profile-field">
+        <div class="field-label">Location</div>
+        <div class="field-value" id="profileLocation">New York, USA</div>
+      </div>
+      <div class="profile-field">
+        <div class="field-label">Bio</div>
+        <div class="field-value" id="profileBio">Frontend developer passionate about creating beautiful user
+          experiences.</div>
+      </div>
+      <button class="edit-button" id="editProfileBtn">Edit Profile</button>
+    </div>
+    <form class="edit-form" id="editProfileForm">
+      <div class="form-group">
+        <input type="text" class="form-input" id="editName" placeholder=" ">
+        <label class="form-label" for="editName">Name</label>
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-input" id="editEmail" placeholder=" ">
+        <label class="form-label" for="editEmail">Email</label>
+      </div>
+      <div class="form-group">
+        <input type="tel" class="form-input" id="editPhone" placeholder=" ">
+        <label class="form-label" for="editPhone">Phone</label>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-input" id="editLocation" placeholder=" ">
+        <label class="form-label" for="editLocation">Location</label>
+      </div>
+      <div class="form-group">
+        <textarea class="form-input" id="editBio" placeholder=" " rows="3"></textarea>
+        <label class="form-label" for="editBio">Bio</label>
+      </div>
+      <button type="submit" class="save-button">Save Changes</button>
+      <button type="button" class="cancel-button" id="cancelEditBtn">Cancel</button>
+    </form>
+  </div>
+  <script type="module" src="{{ url_for('static', filename='js/Investor-Profile_script.js') }}"></script>
+</body>
+</html>

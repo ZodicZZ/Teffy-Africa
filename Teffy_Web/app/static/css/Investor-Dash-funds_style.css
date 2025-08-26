@@ -1,0 +1,247 @@
+
+:root {
+--primary-green: rgba(26, 141, 95, 0.9);
+--light-green: rgba(26, 141, 95, 0.05);
+--border-green: rgba(26, 141, 95, 0.1);
+--white: #ffffff;
+--glass-bg: rgba(255, 255, 255, 0.8);
+--text-primary: #1a1f36;
+--text-secondary: #4f566b;
+}
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+min-height: 100vh;
+background: linear-gradient(135deg, #f5f7fa 0%, #f8f9fa 100%);
+color: var(--text-primary);
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 2rem;
+}
+
+.funds-container {
+width: 100%;
+max-width: 1000px;
+background: var(--glass-bg);
+backdrop-filter: blur(20px);
+border-radius: 24px;
+border: 1px solid rgba(255, 255, 255, 0.9);
+box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+overflow: hidden;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.funds-container:hover {
+transform: translateY(-2px);
+box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.funds-header {
+padding: 2.5rem;
+background: rgba(255, 255, 255, 0.95);
+border-bottom: 1px solid var(--border-green);
+position: relative;
+overflow: hidden;
+}
+
+.funds-header::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+height: 1px;
+background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--primary-green) 50%,
+    transparent 100%
+);
+}
+
+.funds-title {
+font-size: 2rem;
+font-weight: 600;
+color: var(--text-primary);
+margin-bottom: 0.75rem;
+letter-spacing: -0.5px;
+}
+
+.funds-subtitle {
+font-size: 1rem;
+color: var(--text-secondary);
+line-height: 1.5;
+}
+
+.funds-content {
+padding: 2.5rem;
+}
+
+.fund-stats {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 2rem;
+margin-bottom: 2.5rem;
+}
+
+.stat-box {
+background: rgba(255, 255, 255, 0.95);
+padding: 2rem;
+border-radius: 16px;
+border: 1px solid var(--border-green);
+transition: all 0.3s ease;
+cursor: pointer;
+position: relative;
+overflow: hidden;
+}
+
+.stat-box::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 3px;
+background: linear-gradient(90deg, var(--primary-green), transparent);
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+
+.stat-box:hover {
+transform: translateY(-5px);
+box-shadow: 0 12px 20px -10px rgba(0, 0, 0, 0.1);
+}
+
+.stat-box:hover::before {
+opacity: 1;
+}
+
+.stat-label {
+font-size: 0.9rem;
+color: var(--text-secondary);
+margin-bottom: 0.75rem;
+letter-spacing: 0.5px;
+text-transform: uppercase;
+}
+
+.stat-value {
+font-size: 2rem;
+font-weight: 600;
+color: var(--text-primary);
+transition: color 0.3s ease;
+}
+
+.stat-box:hover .stat-value {
+color: var(--primary-green);
+}
+
+.stat-change {
+font-size: 0.9rem;
+color: var(--primary-green);
+margin-top: 0.5rem;
+display: flex;
+align-items: center;
+gap: 0.25rem;
+opacity: 0;
+transform: translateY(10px);
+transition: all 0.3s ease;
+}
+
+.stat-box:hover .stat-change {
+opacity: 1;
+transform: translateY(0);
+}
+
+.no-funds {
+text-align: center;
+padding: 4rem 2rem;
+background: rgba(255, 255, 255, 0.95);
+border-radius: 16px;
+border: 1px solid var(--border-green);
+transition: all 0.3s ease;
+}
+
+.no-funds-title {
+font-size: 1.5rem;
+color: var(--text-primary);
+margin-bottom: 1rem;
+font-weight: 600;
+}
+
+.no-funds-text {
+color: var(--text-secondary);
+font-size: 1rem;
+line-height: 1.6;
+max-width: 400px;
+margin: 0 auto;
+}
+
+.loading-indicator {
+width: 40px;
+height: 40px;
+border: 3px solid var(--light-green);
+border-top: 3px solid var(--primary-green);
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin: 2rem auto;
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+
+.loading .loading-indicator {
+opacity: 1;
+}
+
+@keyframes spin {
+to {
+    transform: rotate(360deg);
+}
+}
+
+@media (max-width: 768px) {
+body {
+    padding: 1rem;
+}
+
+.funds-container {
+    border-radius: 20px;
+}
+
+.funds-header {
+    padding: 2rem;
+}
+
+.funds-title {
+    font-size: 1.75rem;
+}
+
+.funds-content {
+    padding: 2rem;
+}
+
+.fund-stats {
+    gap: 1.5rem;
+}
+
+.stat-box {
+    padding: 1.5rem;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+.funds-container,
+.stat-box,
+.stat-change {
+    transition: none;
+}
+}
